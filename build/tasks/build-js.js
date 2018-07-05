@@ -7,17 +7,10 @@ import {createProject} from 'gulp-typescript';
 let tsProject = createProject('tsconfig.json');
 
 gulp.task('build-js', ['build-definition'], () => {
-    return browserify({
-        basedir: '.',
-        debug: true,
-        entries: ['src/index.ts'],
-        cache: {},
-        packageCache: {},
-    })
-        .plugin(tsify)
-        .bundle()
-        .pipe(source('scripts.js'))
-        .pipe(gulp.dest('dist/lib'));
+  return tsProject.src()
+    .pipe(tsProject()).js
+    .pipe(gulp.dest('dist/lib'))
+  ;
 });
 
 gulp.task('build-definition', () => {

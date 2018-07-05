@@ -4,7 +4,7 @@
   "description": "bépoè^vdljz",
   "license": "MIT",
   "private": true,
-  "main": "MentosGun/Mini-Librairie",
+  "main": "dist/lib/index.js",
   "typing": "dist/definitions/index.d.ts",
   "devDependencies": {
     "@types/object-assign": "^4.0.30",
@@ -14,14 +14,10 @@
     "babel-preset-stage-1": "^6.24.1",
     "babelify": "^8.0.0",
     "browser-sync": "^2.24.5",
-    "browserify": "^16.2.2",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-typescript": "^5.0.0-alpha.2",
     "require-dir": "^1.0.0",
-    "tsify": "^4.0.0",
     "typescript": "^2.9.2",
-    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {}
 }
