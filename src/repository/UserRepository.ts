@@ -1,4 +1,5 @@
 import {User} from "../entity/User";
+import {Config} from "../Config";
 
 export class UserRepository {
 
@@ -8,7 +9,7 @@ export class UserRepository {
     this.config = config
   }
   find(): Promise<User[]> {
-    return fetch(this.baseUrl + '/api/users', {
+    return fetch(this.config.baseUrl + '/api/users', {
       headers: {
         'Authorization': 'Bearer ' + this.config.token,
       },
@@ -30,7 +31,7 @@ export class UserRepository {
   // findOne(id: number)
 
   create(user: User): Promise<User> {
-    return fetch(this.baseUrl + '/api/users', {
+    return fetch(this.config.baseUrl + '/api/users', {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + this.config.token,

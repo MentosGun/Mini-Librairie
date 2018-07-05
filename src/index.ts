@@ -9,6 +9,7 @@ export {
   User,
   Message,
   Room,
+  Config,
 
   UserRepository,
 }

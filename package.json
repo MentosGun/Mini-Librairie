@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "main": "MentosGun/Mini-Librairie",
+  "typing": "dist/definitions/index.d.ts",
   "devDependencies": {
     "@types/object-assign": "^4.0.30",
     "babel": "^6.23.0",
