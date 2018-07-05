@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "main": "dist/lib/index.js",
-  "typing": "dist/definitions/index.d.ts",
+  "typing": "dist/definition/index.d.ts",
   "devDependencies": {
     "@types/object-assign": "^4.0.30",
     "babel": "^6.23.0",
