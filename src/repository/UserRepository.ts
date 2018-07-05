@@ -1,4 +1,6 @@
-export class UserRepositoy {
+import {User} from "../entity/User";
+
+export class UserRepository {
   find(): Promise<User[]> {
     return fetch('http://192.168.1.54:8080/api/users', {
       headers: {
@@ -9,11 +11,32 @@ export class UserRepositoy {
         return response.json();
       })
       .then<User[]>((objects: Object[]) => {
+        const newArray: User[] = [];
         objects.forEach((object) => {
-          (Object as any).assign(object, new User());
+          newArray.push((Object as any).assign(new User(), object));
         });
 
-        return <User[]> objects;
+        return newArray;
+      })
+    ;
+  }
+
+  // findOne(id: number)
+
+  create(user: User): Promise<User> {
+    return fetch('http://192.168.1.54:8080/api/users', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer (TOKEN)',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+      .then<Object[]>((response: Response) => {
+        return response.json();
+      })
+      .then<User>((object: Object) => {
+        return (Object as any).assign(new User(), object);
       })
     ;
   }
