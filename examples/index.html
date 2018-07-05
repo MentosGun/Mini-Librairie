@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu des allumettes</title>
+
+    <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container">
+        <h1 class="navbar-brand text-white">
+            <span class="logo"></span>
+            Jeu des allumettes
+        </h1>
+    </div>
+</nav>
+
+<section id="liste-joueurs" class="section-jeu">
+    <div class="container">
+        <div class="card">
+            <h2 class="h5 card-header">
+                Liste des joueurs
+            </h2>
+
+            <div class="card-body" id="form-ajout-joueur">
+                <div class="row">
+                    <div class="col">
+                        <input id="joueur-nom" type="text" class="form-control" placeholder="Entrer le nom du joueur">
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                        <button type="button" class="btn btn-success" id="joueur-ajout">
+                            Ajouter le joueur
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <!--
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Joueur 1
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="boite-allumettes" class="section-jeu">
+    <div class="container">
+        <div class="card">
+            <h2 class="h5 card-header">
+                Boite d'allumettes
+            </h2>
+
+            <div class="card-body" id="form-boite-allumettes">
+                <input id="nb-allumettes" type="text" class="form-control" value="10"
+                       placeholder="Entrer le nombre d'allumettes dans la boite">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="partie" class="section-jeu">
+    <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" id="start-jeu">
+            Démarrer la partie
+        </button>
+    </div>
+
+    <div class="container masquer" id="choix-allumettes">
+        <div class="card">
+            <h2 class="h5 card-header">
+                <strong id="nom-joueur-enlever">NOM JOUEUR</strong>, combien d'allumette(s) à enlever ?
+            </h2>
+
+            <div class="card-body text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="nb-enleve" id="nb-enleve-1" value="1" checked>
+
+                            <label class="form-check-label" for="nb-enleve-1">
+                                1
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="nb-enleve" id="nb-enleve-2" value="2" checked>
+
+                            <label class="form-check-label" for="nb-enleve-2">
+                                2
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="nb-enleve" id="nb-enleve-3" value="3" checked>
+
+                            <label class="form-check-label" for="nb-enleve-3">
+                                3
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" id="btn-enlever-allumettes">
+                            Enlever
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="assets/scripts.js"></script>
+
+</body>
+</html>
