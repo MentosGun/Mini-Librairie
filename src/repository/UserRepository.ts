@@ -1,10 +1,16 @@
 import {User} from "../entity/User";
 
 export class UserRepository {
+
+  private config: Config;
+
+  constructor(config: Config) {
+    this.config = config
+  }
   find(): Promise<User[]> {
-    return fetch('http://192.168.1.54:8080/api/users', {
+    return fetch(this.baseUrl + '/api/users', {
       headers: {
-        'Authorization': 'Bearer (TOKEN)'
+        'Authorization': 'Bearer ' + this.config.token,
       },
     })
       .then<User[]>((response: Response) => {
@@ -24,10 +30,10 @@ export class UserRepository {
   // findOne(id: number)
 
   create(user: User): Promise<User> {
-    return fetch('http://192.168.1.54:8080/api/users', {
+    return fetch(this.baseUrl + '/api/users', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer (TOKEN)',
+        'Authorization': 'Bearer ' + this.config.token,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(user),
